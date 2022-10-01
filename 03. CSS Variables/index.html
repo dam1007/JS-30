@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 변수</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Update CSS Variables with <span class="h1">JS</span></h2>
+    <div class="controls">
+        <label for="spacing">Spacing</label>
+        <input type="range" name="spacing" min="0" max="200" value="0" data-sizing="px">
+
+        <label for="blur">Blur</label>
+        <input type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
+
+        <label for="base">Base Color</label>
+        <input type="color" name="base" value="#ffc600">
+    </div>
+
+    <img src="wasa-crispbread-uF10l5V3bYs-unsplash.jpg" src="이미지">
+
+    <!-- script -->
+    <script>
+        const inputs = document.querySelectorAll('.controls input');
+        // console.log(inputs);
+
+        function handleUpdate() {
+            //dataset - 객체. 특정 요소의 data 관련 속성값을 가진 객체. 
+            const suffix = this.dataset.sizing || '';
+            console.log(this.name);
+            document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+        }
+        inputs.forEach(input => input.addEventListener('change', handleUpdate));
+    </script>
+</body>
+</html>

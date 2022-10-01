@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{ 
+    min-height:100vh; 
+     display:flex; 
+     flex-direction:column; 
+     justify-content:center; 
+     align-items:center; 
+} 
+
+/*for the background image to give less opacity and dont change the elements above - seen this in css tricks*/ 
+body::after{ 
+    content:''; 
+    background: url(https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80); 
+    background-size:cover; 
+    opacity:0.5; 
+
+    top:0; 
+    left:0; 
+    bottom:0; 
+    right:0; 
+    position:absolute; 
+    z-index:-1; 
+}  
+
+.container__img{ 
+width:15rem; 
+margin:2rem; 
+} 
+
+img{width:100%;} 
+
+.wrapper{ 
+    padding:2rem; 
+    background-color:white; 
+    box-shadow: 0 0 0 10px rgba(0,0,0, 0.1); 
+} 
+
+h2{ 
+    text-align:center; 
+    font-size:3rem; 
+    font-weight:200; 
+    text-transform: uppercase; 
+    margin:1rem 0; 
+    letter-spacing: .2rem; 
+} 
+
+/*ul*/ 
+.plates-list{ 
+text-align:left; 
+list-style-type:none; 
+} 
+
+/*input text*/ 
+.add-items input{ 
+    margin-top:1rem; 
+    padding:1rem; 
+    outline:0; 
+    border:1px solid rgba(70, 78, 70, 0.562); 
+} 
+
+/*input submit*/ 
+.add-items input[type="submit"]{ 
+    background-color:rgb(230, 168, 0); 
+    color:white; 
+    border:none; 
+    padding:1.1rem; 
+} 
